@@ -5,6 +5,7 @@
 
 ## <u>Features</u>
 **Generate 6 Random Colors** using [The Color API](https://www.thecolorapi.com/)  
+**Choose your own colors** using the color picker
 **Drag & Drop Colors** to rearrange them  
 **Click to Copy HEX Code** to clipboard  
 
