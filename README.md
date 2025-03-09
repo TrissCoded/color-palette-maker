@@ -1,4 +1,4 @@
-# <u>🎨 TTINTIFY </u>
+# <u>🎨 TINTIFY </u>
  **Visit Live:** https://tintify.netlify.app/
  
 # <u> A **color palette maker** that allows you to create, customize, and copy colors seamlessly.</u>
