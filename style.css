@@ -6,7 +6,7 @@ body {
   font-family: 'Quantico', sans-serif;
   box-sizing: border-box;
   background-color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden; 
 }
 
 /* Left-Aligned Navbar */
@@ -31,7 +31,7 @@ body {
   color: #333;
 }
 
-/* Space between navbar and  button */
+/* Space between navbar and button */
 .form {
   position: fixed;
   top: 80px;
@@ -60,7 +60,6 @@ body {
   background-color: #d0d0d0;
 }
 
-/* Palette Container */
 #palette {
   position: fixed;
   top: 130px;
@@ -72,14 +71,16 @@ body {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
+  flex-wrap: wrap;
+  overflow-y: auto; 
 }
 
-/* Draggable Color Blocks */
 .color-col {
   flex: 1;
-  margin: 0 8px;
-  height: 100%;
-  border-radius: 20px;
+  max-width: 150px;
+  min-width: 120px;
+  height: 18vh; 
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +89,8 @@ body {
   transition: transform 0.2s;
   overflow: hidden;
   cursor: grab;
+  background-color: #ddd;
+  padding: 10px;
 }
 
 .color-col:active {
@@ -95,26 +98,25 @@ body {
   transform: scale(1.05);
 }
 
-/* visual placeholder while dragging */
 .dragging {
   opacity: 0.5;
 }
 
-/* Centered Hex Codes */
 .color-hex {
-  font-size: 28px;
+  font-size: 18px; 
   font-weight: bold;
   color: #000;
   text-transform: uppercase;
-  margin: 10px 0 5px;
+  margin: 5px 0;
 }
 
-/*  Color Names Below Hex */
 .color-name {
-  font-size: 16px;
+  font-size: 12px; 
   font-weight: normal;
   color: rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .color-picker {
@@ -127,17 +129,33 @@ body {
   cursor: pointer;
 }
 
+
 @media screen and (max-width: 800px) {
   #palette {
     flex-direction: column;
     height: calc(100vh - 130px);
+    overflow-y: auto;
   }
+
   .color-col {
-    height: 15%;
-    border-radius: 15px;
+    width: 90%;
+    max-width: 280px;
+    height: 14vh; 
+    border-radius: 10px;
     margin: 5px 0;
   }
-  .form {
-    justify-content: center;
+
+  .button-container {
+    width: 100%;
   }
+
+  .color-hex {
+    font-size: 16px;
+  }
+
+  .color-name {
+    font-size: 12px;
+  }
+
+  
 }
