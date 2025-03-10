@@ -6,10 +6,10 @@ body {
   font-family: 'Quantico', sans-serif;
   box-sizing: border-box;
   background-color: #ffffff;
-  overflow-x: hidden; 
+  overflow: hidden;
 }
 
-/* Left-Aligned Navbar */
+/* Navbar */
 .navbar {
   width: 100%;
   background-color: #ffffff;
@@ -60,6 +60,7 @@ body {
   background-color: #d0d0d0;
 }
 
+/* Palette Container */
 #palette {
   position: fixed;
   top: 130px;
@@ -71,16 +72,14 @@ body {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  flex-wrap: wrap;
-  overflow-y: auto; 
 }
 
+/* Draggable Color Blocks */
 .color-col {
   flex: 1;
-  max-width: 150px;
-  min-width: 120px;
-  height: 18vh; 
-  border-radius: 15px;
+  margin: 0 8px;
+  height: 100%;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,8 +88,6 @@ body {
   transition: transform 0.2s;
   overflow: hidden;
   cursor: grab;
-  background-color: #ddd;
-  padding: 10px;
 }
 
 .color-col:active {
@@ -98,27 +95,29 @@ body {
   transform: scale(1.05);
 }
 
+/* Visual placeholder while dragging */
 .dragging {
   opacity: 0.5;
 }
 
+/* Centered Hex Codes */
 .color-hex {
-  font-size: 18px; 
+  font-size: 28px;
   font-weight: bold;
   color: #000;
   text-transform: uppercase;
-  margin: 5px 0;
+  margin: 10px 0 5px;
 }
 
+/* Color Names Below Hex */
 .color-name {
-  font-size: 12px; 
+  font-size: 16px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.7);
   text-transform: capitalize;
-  text-align: center;
-  margin-bottom: 5px;
 }
 
+/* Hidden Color Picker */
 .color-picker {
   position: absolute;
   top: 0;
@@ -129,7 +128,7 @@ body {
   cursor: pointer;
 }
 
-
+/* Mobile adjustments */
 @media screen and (max-width: 800px) {
   #palette {
     flex-direction: column;
@@ -138,24 +137,12 @@ body {
   }
 
   .color-col {
-    width: 90%;
-    max-width: 280px;
-    height: 14vh; 
-    border-radius: 10px;
+    height: 15%;
+    border-radius: 15px;
     margin: 5px 0;
   }
 
-  .button-container {
-    width: 100%;
+  .form {
+    justify-content: center;
   }
-
-  .color-hex {
-    font-size: 16px;
-  }
-
-  .color-name {
-    font-size: 12px;
-  }
-
-  
 }
